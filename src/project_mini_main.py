@@ -20,7 +20,6 @@ class Project:
         self.path = _path_
         self.name = _name_
 
-
     def Generate_Working_Dir(self):
         self.c = Colors()
         project_path = ''
@@ -35,6 +34,8 @@ class Project:
                 print(self.c.OUTP+"Successfully created project"+self.c.STND)
             except FileExistsError:
                 print(self.c.WARN+'Project already exists'+self.c.STND)
+            except FileNotFoundError:
+                print(self.c.WARN+'Invalid file path'+self.c.STND)
                 
     
 
@@ -46,10 +47,7 @@ class Project:
                     print(self.c.OUTP+"Successfully created folders: "+d+self.c.STND)
                 except FileExistsError:
                     print(self.c.WARN+d+' exists'+self.c.STND)
-                    
-        
-       
-       
+      
 ## main form dialog
 class Form(QDialog):
     
