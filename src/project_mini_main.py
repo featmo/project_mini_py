@@ -24,7 +24,7 @@ class Project:
     def Generate_Working_Dir(self):
         self.c = Colors()
         project_path = ''
-        sub_dir = ['_src_','_lib_','_data_','_shots_', '_fin_']
+        sub_dir = ['_src_','_lib_','_data_','_shots_', '_fin_', '_doc_']
         if(len(self.path) < 1):
             self.path = 'C:/'
         if(len(self.name) > 0):
@@ -60,7 +60,6 @@ class Form(QDialog):
         self.setWindowTitle('PMINI')
         self._button = QPushButton('Create New Project')
     
-        self.label.setText(QString('...'))
         self._edit_project_path = QLineEdit()
         self._edit_project_name = QLineEdit()
         self._edit_project_path.setPlaceholderText('Project path')
